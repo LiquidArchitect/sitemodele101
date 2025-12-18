@@ -6,7 +6,7 @@
   <meta name="description" content="Sandra B. Coiffeurs Créateurs — Salon unisexe à Avignon depuis 1999. Coupe, coloration, permanente, barbier & soins. Avis clients en direct.">
   <title>Sandra B. Coiffeurs Créateurs • Avignon</title>
   <link rel="icon" href="image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💇</text></svg>">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xwenJ3WJ7U6v7G9+QxK9Kx5J7U6v7G9+QxK9Kx5J7U6v7G9+QxK9Kx5J7U6v7G9+QxK9Kx5J7U6v7G9+QxK9Kx5J7U6v7G9+QxK9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -296,6 +296,43 @@
       box-shadow: 0 8px 24px rgba(46, 125, 50, 0.55);
     }
 
+    /* Legal pages styling */
+    .legal-page {
+      display: none;
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+
+    .legal-page h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-page h3 {
+      margin: 1.5rem 0 0.8rem;
+      color: var(--primary);
+    }
+
+    .legal-page p, .legal-page ul {
+      margin-bottom: 1rem;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-to-top:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.1rem; }
       .section-title { font-size: 1.8rem; }
@@ -368,25 +405,6 @@
       </div>
     </div>
 
-       <h2 class="section-title" id="avis">Nos clients témoignent</h2>
-    <div id="viewcy-reviews" style="min-height: 400px; background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow);">
-      <p style="text-align: center; color: #777;">Chargement des avis Google…</p>
-    </div>
-    <script src="https://cdn.viewcy.fr/api/reviews.js?placeId=ChIJOwg0C4395kcR2AlhC8nKlOk" defer></script>
-
-    <h2 class="section-title" id="avis">Nos clients témoignent</h2>
-    <div class="reviews-widget" style="background: white; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; height: 520px;">
-      <iframe
-        src="https://search.google.com/local/reviews?placeid=ChIJOwg0C4395kcR2AlhC8nKlOk&hl=fr&gl=FR"
-        width="100%"
-        height="100%"
-        style="border:0; border-radius: 16px;"
-        allowfullscreen
-        loading="lazy"
-        title="Avis clients Google - Sandra B. Coiffeurs Créateurs">
-      </iframe>
-    </div>
-
     <h2 class="section-title" id="avis">Nos clients témoignent</h2>
     <p style="text-align: center; margin-bottom: 1rem; font-size: 0.95rem; color: #666;">Découvrez ce que disent nos clients sur Google — mis à jour en temps réel.</p>
     <div class="reviews-widget" style="background: white; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; height: 520px;">
@@ -400,7 +418,6 @@
         title="Avis clients Google - Sandra B. Coiffeurs Créateurs">
       </iframe>
     </div>
-
 
     <h2 class="section-title" id="contact">Nous trouver</h2>
     <div class="map-container">
@@ -416,9 +433,9 @@
     <p>© 2025 Sandra B. Coiffeurs Créateurs — Tous droits réservés.</p>
     <p>8 Rue du Vieux Sextier, 84000 Avignon | <a href="tel:0490860888" style="color:#e0d8d4;">04 90 86 08 88</a></p>
     <div class="footer-links">
-      <a href="#mentions">Mentions légales</a>
+      <a href="#mentions" class="legal-link">Mentions légales</a>
       •
-      <a href="#rgpd">RGPD</a>
+      <a href="#rgpd" class="legal-link">RGPD</a>
       •
       <a href="https://www.instagram.com/salonsandrab/?hl=fr" target="_blank" rel="noopener" aria-label="Suivez-nous sur Instagram">
         <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
@@ -426,28 +443,82 @@
     </div>
   </footer>
 
+  <!-- ✅ PAGES LÉGALES -->
+  <div id="mentions" class="legal-page">
+    <h2>Mentions légales</h2>
+    <p><strong>Éditeur du site :</strong> Sandra B. Coiffeurs Créateurs</p>
+    <p><strong>Propriétaire :</strong> Sandra BONNAFE</p>
+    <p><strong>Adresse :</strong> 8 Rue du Vieux Sextier, 84000 Avignon</p>
+    <p><strong>Téléphone :</strong> <a href="tel:0490860888">04 90 86 08 88</a></p>
+
+    <h3>Propriété intellectuelle</h3>
+    <p>Tous les contenus du site (textes, images, logos, vidéos) sont la propriété exclusive de Sandra B. Coiffeurs Créateurs. Toute reproduction, distribution ou modification sans autorisation préalable est strictement interdite.</p>
+
+    <a href="#accueil" class="back-to-top">↑ Retour à l'accueil</a>
+  </div>
+
+  <div id="rgpd" class="legal-page">
+    <h2>Politique de confidentialité (RGPD)</h2>
+    <p>Ce site collecte uniquement les données strictement nécessaires à son fonctionnement.</p>
+
+    <h3>Données collectées</h3>
+    <ul>
+      <li><strong>Téléphone</strong> : lorsque vous cliquez sur "Appeler", aucune donnée n’est stockée — l’appel est direct via votre opérateur.</li>
+      <li><strong>Statistiques anonymisées</strong> : via Plausible Analytics (pas de cookies, pas d’IP stockée, respect strict du RGPD).</li>
+    </ul>
+
+    <h3>Vos droits</h3>
+    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+    <ul>
+      <li>Droit d’accès</li>
+      <li>Droit de rectification</li>
+      <li>Droit à l’effacement</li>
+      <li>Droit à la portabilité</li>
+      <li>Droit d’opposition</li>
+    </ul>
+    <p>Pour exercer vos droits, contactez-nous à <a href="tel:0490860888">04 90 86 08 88</a>.</p>
+
+    <h3>Cookies</h3>
+    <p>Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement (aucun cookie de tracking ou publicitaire).</p>
+
+    <a href="#accueil" class="back-to-top">↑ Retour à l'accueil</a>
+  </div>
+
   <a href="tel:0490860888" class="call-btn" aria-label="Appeler le salon maintenant">
     <i class="fas fa-phone" aria-hidden="true"></i>
   </a>
 
   <script defer data-domain="sandra-b-avignon.fr" src="https://plausible.io/js/script.js"></script>
   <script>
+    // Smooth scroll + gestion des pages légales
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId) || document.querySelector(targetId);
+        
         if (target) {
-          const headerOffset = 80;
-          const elementPosition = target.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
+          // Cacher toutes les pages légales
+          document.querySelectorAll('.legal-page').forEach(page => {
+            page.style.display = 'none';
           });
+          
+          // Si c'est une page légale, l'afficher
+          if (target.classList.contains('legal-page')) {
+            target.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            // Sinon, scroll normal
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
         }
       });
     });
 
+    // Track call clicks
     document.querySelectorAll('a[href^="tel:"]').forEach(link => {
       link.addEventListener('click', () => {
         if (window.plausible) plausible('Call Click');
@@ -456,5 +527,4 @@
   </script>
 </body>
 </html>
-
 
