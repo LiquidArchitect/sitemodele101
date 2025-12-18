@@ -1,1 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Sandra B. Coiffeurs Créateurs — Salon unisexe à Avignon depuis 1999. Coupe, coloration, permanente, barbier & soins. Avis clients en direct.">
+  <title>Sandra B. Coiffeurs Créateurs • Avignon</title>
+  <link rel="icon" href="image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💇</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xwenJ3WJ7U6v7G9+QxK9Kx5J7U6v7G9+QxK9Kx5J7U6v7G9+QxK9Kx5J7U6v7G9+QxK9Kx5J7U6v7G9+QxK9Kx5J7U6v7G9+QxK9" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7a6a63;
+      --secondary: #f5f0ed;
+      --accent: #c9b5ae;
+      --text: #333;
+      --light: #fff;
+      --radius: 16px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--secondary);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), #8c7a71);
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 46px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 0.8rem;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .hero {
+      background: url('https://i.imgur.com/ZCDzsMJ.jpeg') center/cover no-repeat;
+      height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .hero-content {
+      z-index: 2;
+      padding: 0 1.5rem;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      font-weight: 600;
+      padding: 0.85rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      font-size: 1.05rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 2.5rem 0 1.8rem;
+      font-size: 2.1rem;
+      color: var(--primary);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: var(--primary);
+      margin: 0.8rem auto;
+      border-radius: 3px;
+    }
+
+    .about {
+      background: white;
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .about p {
+      margin-bottom: 1.1rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .info-card {
+      background: white;
+      padding: 1.6rem;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-card i {
+      font-size: 2.3rem;
+      color: var(--primary);
+      margin-bottom: 1.1rem;
+    }
+
+    .info-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .hours-table th,
+    .hours-table td {
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .hours-table th {
+      background: var(--primary);
+      color: white;
+      font-weight: 500;
+    }
+
+    .map-container {
+      height: 480px;
+      margin: 2.5rem 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .footer-links {
+      margin: 1.2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      color: #e0d8d4;
+      margin: 0 0.7rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links i {
+      font-size: 1.1rem;
+    }
+
+    /* Floating Call Button — Mobile & Desktop */
+    .call-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 64px;
+      height: 64px;
+      background: #2e7d32;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(46, 125, 50, 0.4);
+      z-index: 1000;
+      font-size: 1.6rem;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .call-btn:hover {
+      transform: scale(1.12) rotate(5deg);
+      background: #1b5e20;
+      box-shadow: 0 8px 24px rgba(46, 125, 50, 0.55);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.1rem; }
+      .section-title { font-size: 1.8rem; }
+      nav ul { gap: 1rem; }
+      .call-btn { width: 60px; height: 60px; font-size: 1.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="https://i.imgur.com/KNwIkCQ.jpeg" alt="Logo Sandra B. Coiffeurs Créateurs">
+        Sandra B. Coiffeurs Créateurs<br><small>Depuis 1999</small>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#avis">Avis</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero" id="accueil">
+    <div class="hero-content">
+      <h1>Un art de la transformation, depuis 26 ans</h1>
+      <a href="tel:0490860888" class="btn" aria-label="Appeler le salon pour prendre rendez-vous">
+        <i class="fas fa-phone-alt" aria-hidden="true"></i> Appeler pour un RDV
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">Notre univers</h2>
+    <div class="about">
+      <p>Nous accueillons avec bienveillance hommes, femmes, jeunes et expérimentés, dans un cadre chaleureux pensé pour vous mettre en confiance.</p>
+      <p>Chaque rendez-vous est une rencontre unique : écoute, conseil personnalisé, geste expert. Pas de surprise — ni dans le résultat, ni dans le prix.</p>
+      <p>Notre équipe, fédérée par Sandra, allie rigueur technique et douceur relationnelle. Parce que se faire beau, c’est aussi se sentir bien.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <h3>Adresse</h3>
+        <p>8 Rue du Vieux Sextier<br>84000 Avignon</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+        <h3>Téléphone</h3>
+        <p><a href="tel:0490860888">04 90 86 08 88</a></p>
+      </div>
+      <div class="info-card">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        <h3>Horaires</h3>
+        <table class="hours-table">
+          <tr><td>Lundi</td><td>Fermé</td></tr>
+          <tr><td>Mardi</td><td>09:15–18:00</td></tr>
+          <tr><td>Mercredi</td><td>09:15–18:00</td></tr>
+          <tr><td>Jeudi</td><td>09:15–18:00</td></tr>
+          <tr><td>Vendredi</td><td>09:00–18:30</td></tr>
+          <tr><td>Samedi</td><td>09:00–18:30</td></tr>
+          <tr><td>Dimanche</td><td>Fermé</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="section-title" id="avis">Nos clients témoignent</h2>
+    <div id="viewcy-reviews" style="min-height: 400px; background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow);">
+      <p style="text-align: center; color: #777;">Chargement des avis Google…</p>
+    </div>
+    <script src="https://cdn.viewcy.fr/api/reviews.js?placeId=ChIJOwg0C4395kcR2AlhC8nKlOk" defer></script>
+
+    <h2 class="section-title" id="contact">Nous trouver</h2>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2847.634756449477!2d4.807258776666063!3d43.94978857143863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b4a69174e48e3b%3A0xc32254141979228b!2s8%20Rue%20du%20Vieux%20Sextier%2C%2084000%20Avignon!5e0!3m2!1sfr!2sfr!4v1712345678901!5m2!1sfr!2sfr"
+        width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+        title="Carte Google Maps - Sandra B. Coiffeurs Créateurs">
+      </iframe>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Sandra B. Coiffeurs Créateurs — Tous droits réservés.</p>
+    <p>8 Rue du Vieux Sextier, 84000 Avignon | <a href="tel:0490860888" style="color:#e0d8d4;">04 90 86 08 88</a></p>
+    <div class="footer-links">
+      <a href="#mentions">Mentions légales</a>
+      •
+      <a href="#rgpd">RGPD</a>
+      •
+      <a href="https://www.instagram.com/salonsandrab/?hl=fr" target="_blank" rel="noopener" aria-label="Suivez-nous sur Instagram">
+        <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
+      </a>
+    </div>
+  </footer>
+
+  <a href="tel:0490860888" class="call-btn" aria-label="Appeler le salon maintenant">
+    <i class="fas fa-phone" aria-hidden="true"></i>
+  </a>
+
+  <script defer data-domain="sandra-b-avignon.fr" src="https://plausible.io/js/script.js"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.plausible) plausible('Call Click');
+      });
+    });
+  </script>
+</body>
+</html>
+
 
